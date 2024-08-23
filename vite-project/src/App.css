@@ -1,0 +1,11 @@
+.mainbody{
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fca311;
+    row-gap: 10px;
+
+}
+
