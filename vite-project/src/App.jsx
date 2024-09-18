@@ -1,30 +1,27 @@
-
+import React from 'react'
 import './App.css'
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
-import Navbar from './componentes/Navbar/Navbar'
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer'
+import { BrowserRouter,Route, Routes } from 'react-router-dom'
+import  Contacto  from './componentes/Contacto/Contacto'
+import Faq  from './componentes/FAQ/Faq'
+import Navbar from './componentes/Navbar/NavBar'
 
 
 
 function App() {
   
   return (
-
-    <div className='mainbody'>
-
-    <Navbar/>
-    <ItemListContainer greeting="MM7 - Tienda Urbana" className='itemcont' />
-
-
-    </div>
-    
-    
-
-    
-    
-
-   
-    
-    
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route element={<ItemListContainer/>} path='/'/>
+        <Route element={<ItemListContainer/>} path='/categoria/:categoria'/>
+        <Route element={<ItemDetailContainer/>} path='/detalle/:iditem'/>   
+        <Route element={<Contacto/>} path='/contacto'/>
+        <Route element={<Faq/>} path='/faq'/>
+      </Routes>
+    </BrowserRouter>  
   )
 }
 
